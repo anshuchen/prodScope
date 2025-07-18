@@ -1,0 +1,3 @@
+data_paths:
+  processed_data: ./scopeProject/data/processed
+  raw_data_dir: ./scopeProject/data/raw

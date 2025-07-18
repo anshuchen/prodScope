@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "scopeutils"
+version = "0.1.0"
+authors = [
+  { name="Anshu Chen"},
+]
+description = "Utilities and helper functions for creating firm-level scope classifications, as described in Chen (2025)"
+readme = "README.md"
+requires-python = ">=3.12.3"
+dependencies = [
+    'numpy>=1.26.4',
+    'matplotlib>=3.9.2',
+    'scipy>=1.13.1',
+    'pandas>=2.2.2',
+    'pyyaml>=6.0.1',
+    'sec-api>=1.0.25',
+    'statsmodels>=0.14.4',
+    'pyarrow >= 16.1.0'
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+]

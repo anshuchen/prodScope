@@ -1,0 +1,51 @@
+Metadata-Version: 2.4
+Name: scopeUtils
+Version: 0.1.0
+Summary: Utilities and helper functions for creating firm-level scope classifications, as described in Chen (2025)
+Home-page: https://github.com/your_username/my_package
+Author: Anshu Chen
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.12.3
+Description-Content-Type: text/markdown
+Requires-Dist: numpy>=1.26.4
+Requires-Dist: matplotlib>=3.9.2
+Requires-Dist: scipy>=1.13.1
+Requires-Dist: pandas>=2.2.2
+Requires-Dist: pyyaml>=6.0.1
+Requires-Dist: sec-api>=1.0.25
+Requires-Dist: statsmodels>=0.14.4
+Dynamic: home-page
+Dynamic: requires-python
+
+# here's what the code does
+
+Structure:
+
+scopeProject: contains all the code for cleaning data, classifying 10Ks, generating analysis files. Run the Python files from the root folder (prodScope), like this: 'python scopeProject/0_constructsample/0_get_10k_text.py'. This will make the path references consistent with 'setup.py'. 
+
+scopeProject/0_constructsample: 
+- download_files: this folder contains SAS Studio files for downloading data from WRDS. Since WRDS terms of service does
+not allow me to upload the raw data files, I provide my code containing the download specifications.
+- 0_clean_cs_crsp.py: cleans and merges Compustat firm panel with CRSP returns. Requires Compustat Fundamentals Annuals, 
+Compustat Company file, Compustat-CRSP link file from WRDS, and CRSP monthly returns. See code file for more details. 
+- 1_cik_gvkey_link.py: merges Compustat file from 0_clean_cs_crsp.py-> WRDS CIK-gvkey link file -> WRDS 10K database.
+**This file should be run on WRDS JupyterHub. It extracts files from WRDS Cloud.** 
+- 2_get_10k_text.py: scrapes items 1, 1a, and 7 from SEC database and adds missing flags. Requires API key; enter it in the file.
+- 3_chunk_10k_text.py: splits the output file from 0_get_10k_text.py into 72 chunks to process in parallel (see embed_items below).
+
+
+- Get 10k text and chunk it
+- Embed 
+- 
+- 2_construct_intanStocks.py: uses methodology from EPW (year) to cumulate R&D and SG&A spending into intangible stocks. Requires Compustat Fundamentals Annual tables; place them into scopeProject/data/raw/compustat.
+
+- embed_items: the files in this directory take the output from 1_chunk_10k_text.py and use the AnglE LLM to embed them into vectors.
+Run these files on a High Performance Cluster to parallelize the necessary operations. The whole process took a few days on the 
+Princeton HPC, but I don't recommend running these files without adjusting them to your specific cluster configuration. 
+    - 
+
+classify firms
+form variables
+summary stats (incl HP comparison)
+regressions (stata?)

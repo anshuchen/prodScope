@@ -1,0 +1,11 @@
+README.md
+pyproject.toml
+setup.py
+scopeUtils/__init__.py
+scopeUtils/config.py
+scopeUtils/example.py
+scopeUtils.egg-info/PKG-INFO
+scopeUtils.egg-info/SOURCES.txt
+scopeUtils.egg-info/dependency_links.txt
+scopeUtils.egg-info/requires.txt
+scopeUtils.egg-info/top_level.txt
