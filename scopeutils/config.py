@@ -13,14 +13,6 @@ import datetime
 import ast
 import csv
 
-# paths
-
-#DIR = "C:/Users/Anshu/Princeton Dropbox/Anshu Chen/Scope"
-DIR = "D:/Princeton Dropbox/Anshu Chen/Scope"
-RAW_DATA_DIR = f"{DIR}/Data"
-PROCESSED_DATA = f"{DIR}/Processed_Data"
-TEMP = f"{DIR}/temp"
-
 '''
 
 import os

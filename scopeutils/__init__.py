@@ -1,5 +1,5 @@
 
-# scopeUtils/__init__.py
+# scopeutils/__init__.py
 """
 scopeUtils - Auto-imports dependencies and exposes main functions
 """
