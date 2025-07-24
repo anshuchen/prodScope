@@ -8,7 +8,7 @@ Output: 'scopeProject/data/raw/10k/items1_a_7/' chunk0.parquet - chunk72.parquet
     the input file chunked into 73 parts.
 
 Note: I chose to allocate 1516 rows per file through experimenting on the Princeton della cluster
-and finding that this led to an acceptable trade-off. Too many rows per job -> long wait for
+and finding that this led to an acceptable trade-off. Too many rows per job -> lon[pg wait for
 sufficiently large individual node. Too few rows -> will hit constraint on maximum # of
 requested nodes.
 '''

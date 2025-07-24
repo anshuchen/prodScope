@@ -9,7 +9,6 @@ from pathlib import Path # for importing file paths
 
 # Import your own modules
 from .config import get_config_path, load_config, get_data_path
-
-# TODO add more modules e.g. classification 
+from .embed import *
 
 # print("scopeUtils loaded with all dependencies!")

@@ -38,7 +38,8 @@ class ConfigManager:
         default_config = {
             'data_paths': {
                 'raw_data_dir': '.scopeProject/data/raw',
-                'processed_data': '.scopeProject/data/processed'
+                'processed_data': '.scopeProject/data/processed',
+                'model_dir':'.scopeProject/UAE-Large-V1'
             }
         }
         
@@ -81,7 +82,7 @@ def get_data_path(key):
     return config_manager.get_data_path(key)
 
 
-# Example usage in your other modules:
+# Example usage:
 # my_package/core.py
 '''
 def main_function():
